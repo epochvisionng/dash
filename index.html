@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin | Home</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <style>
+        *{
+            padding:0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .wp{
+            width: 100%;
+            height: 100dvh;
+            overflow-x: hidden;
+            overflow-y: auto;
+            background-color: #efefef;
+            display: flex;
+        }
+
+        .aside{
+            padding: 1rem 0rem;
+            background-color:rgb(37, 33, 54);
+            color: #efefef;
+            font-family: Arial, Helvetica, sans-serif;
+            width: 17%;
+            
+        }
+
+        .aside ul{
+            list-style: none;
+            margin: 2rem 0rem;
+        }
+        .aside a{
+            text-decoration: none;
+            display: block;
+            color: #efefef;
+            padding: 13px 23px;
+        }
+
+        .aside a:hover{
+            background-color: blueviolet;
+        }
+
+        .aside a:focus{
+                background: darkviolet;
+            }
+
+        .aside .profile{
+            text-align: center;
+            background-color:rgb(38, 51, 68);
+            color: #efefef;
+            padding: 1.34rem 0rem;
+            border: 2px solid blueviolet;
+            margin: 3px;
+
+        }
+
+        .panel{
+            /* flex-grow: 100%; */
+            width: calc(100% - 17%);
+            padding: 2rem 0rem;
+        }
+
+        .greeting{
+            background: url('../assets/images/bg4.gif'), linear-gradient(180deg, darkviolet, 23%,  rgb(37, 33, 54));
+            background-blend-mode: overlay;
+            background-size: cover;
+            background-position: 0px -13rem, 0 0;
+            background-repeat: no-repeat;
+            backdrop-filter: blur(10px);
+            height: 28vh;
+            width: 86%;
+            margin: auto;
+            border-radius: 20px;
+            padding: 3rem;
+            color: #fff;
+            font-family: Arial, Helvetica, sans-serif;
+            position: relative;
+
+        }
+        .greeting>div{
+                position: absolute;
+                bottom: 2rem;
+        }
+
+        .controls{
+
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1rem;
+            grid-template-columns: repeat(auto-fill, 350px);
+
+            padding: 0rem 1rem;
+          
+            
+            
+        }
+
+        .controls a{
+            display: block;
+            /* border: 1px solid red; */
+            margin: 1rem 0rem;
+            padding: 1rem;
+            border-radius: 15px;
+            text-decoration:none;
+            align-content:center;
+            background: #fff;
+            position: relative;
+        
+        }
+        .tip{
+            display: inline-block;
+            background:rgba(103, 14, 147, 0.18);
+            /* backdrop-filter: opacity(50%); */
+            color: rgb(103, 14, 147) !important;
+            border-radius: 50%;
+            height: 40px;
+            width: 40px;
+            position: absolute;
+            right: 10px;
+            top: 5px;
+            align-content: center;
+            text-align:center;
+        }
+
+        .menu-toggler{
+            display: inline-block;
+            padding: 4px;
+            background: none;
+            border: 1px solid darkviolet;
+            margin: 0rem 2rem;
+            width: 1.8rem;
+            height: 1.8rem;
+            align-items: center;
+            text-align: center;
+            border-radius: 4px;
+            color: darkviolet;
+        }
+
+        .n-lg{
+            display: none;
+        }
+
+        @media screen and (max-width: 768px){
+            aside{
+                width: 0%;
+                display:none;
+                transition: all 2s ease-in;
+            }
+
+            .controls a{
+                margin: 9px 0px;
+            }
+
+            .panel{
+                width: 100%;
+            }
+
+            .greeting{
+                width: 93%;
+                margin-top: 1rem;
+                margin-bottom: 1rem;
+                 background-position: 0px -2rem, 0 0;
+            }
+
+            .fixed-top{
+                width: initial;
+                position: fixed;
+                top: 0;
+            }
+
+            .menu-sm{
+                width: 80% !important;
+                display: block;
+                position: fixed;
+                height: 100vh;
+                z-index: 99999;
+            }
+
+            aside:has([class='menu-sm']){
+                width: 75% !important;
+            }
+            .sect::after{
+                content: '';
+                display:block;
+                width: 100vw !important;
+                height:100vh;
+                z-index: -9;
+                position: absolute;
+                top: 0;
+                background:rgba(39, 38, 38, 0.34);
+            }
+            .n-lg{
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="wp">
+    <aside class="aside">
+         <div class="nav n-lg">
+     <button class="menu-toggler">≡</button>
+ </div>
+
+        <div class="profile">
+        <h3>DASHBOARD</h3>
+        <p>
+            hi, John Doe
+        </p>
+        </div>
+
+        <div class="sect">
+            <ul>
+                <li><a href="./"><span><i class="fa fa-dashboard"></i> <span>Overview</span></span></a></li>
+                <li><a href="./"><span><i class="fa fa-users"></i> <span>Userboard</span></span></a></li>
+                <li><a href="./"><span><i class="fa fa-line-chart"></i> <span>Activity</span></span></a></li>
+                <li><a href="./"><span><i class="fa fa-pie-chart"></i> <span>Transactions</span></span></a></li>
+                <li><a href="#"><span><i class="fa fa-envelope"></i> <span>Mails</span></span></a></li>
+                <li><a href="./"><span><i class="fa fa-bullhorn"></i> <span>Campaigns</span></span></a></li>
+            </ul>
+            <ul>
+                <li><a href="#"><span><i class="fa fa-cog"></i> <span>Settings</span></span></a></li>
+                <li><a href="javascript: void(0);"><span><i class="fa fa-sign-out"></i> <span>Logout</span></span></a>
+                </li>
+            </ul>
+        </div>
+    </aside>
+    <div class="panel">
+        <div class="screen">
+            <div class="nav">
+                <button class="menu-toggler">≡</button>
+            </div>
+            <div class="greeting">
+                <div>                
+                <h4>hi! 👋 John Doe,</h4>
+                <p>Welcome To Admin Dashboard!</p></div>
+                 <span style="float: right;text-align:center;color:gainsboro;">
+                    DATE <br>⏰
+
+     <script>
+        document.writeln(new Date());
+     </script>
+ </span>
+            </div>
+           
+           
+           
+        </div>
+
+        <!-- @end screen -->
+
+        <div class="controls">
+            <a href="" class="widget">
+                <i class="fa fa-users fa-2x"></i><br>
+                <strong>
+                    Userboard
+                </strong>
+                <span class="tip">99+</span>
+            </a>
+            <a href="" class="widget">
+                <i class="fa fa-line-chart fa-2x"></i><br>
+                <strong>
+                    Activity
+                </strong>
+                <span class="tip">17</span>
+            </a>
+            <a href="" class="widget">
+                <i class="fa fa-pie-chart fa-2x"></i><br>
+                <strong>Transaction</strong>
+                <span class="tip">30</span>
+            </a>
+            <a href="" class="widget">
+                <i class="fa fa-envelope fa-2x"></i><br>
+                <strong>
+                    Mails
+                </strong>
+                <span class="tip">7</span>
+            </a>
+            <a href="" class="widget">
+                <i class="fa fa-bullhorn fa-2x"></i><br>
+                <strong>
+                    Campaigns
+                </strong>
+                <span class="tip">4</span>
+            </a>
+        </div>
+    </div>
+</div>
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/js/all.min.js"></script>
+
+<script>
+    let toggler = document.querySelectorAll('.menu-toggler');
+    
+
+    toggler.forEach(e=>{
+        e.addEventListener('click', ()=>{
+    document.querySelector('aside').style.transition = "width 2s ease-in;";
+    document.querySelector('aside').classList.toggle('menu-sm');
+})
+    })
+    
+    
+</script>
+</body>
+</html>
